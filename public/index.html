@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/app.js"></script>
+</head>
+<body class="page default" id="body__background">
+    <header class="header">
+        <h1 class="header__title">Weather Journal</h1>
+    </header>
+    <main class="page__block" id="page__block--main">
+        <form class="form block">
+            <label for="zip" class="form__label">What zip code are you in today?</label>
+            <input type="text" maxlength="5" minlength="5" required name="zip" class="form__text" id="zip" value="" placeholder="Enter Zip Code Here">
+            <span class="alert" id="zip__alert"></span>
+            <label for="feelings" class="form__label">How are you feeling today?</label>
+            <textarea name="feelings" class="form__textbox" id="feelings" value="" placeholder="Enter Journal Entry Here"></textarea>
+            <button type="button" id="generate" class="button" disabled>Generate</button>
+        </form>
+        <section class="journal" id="journal">
+            <div class="journal__entry card noContent" id="entryHolder">
+                <h2>Latest Entry</h2>
+                <div class="journal__entry__item" id="date"></div>
+                <div class="journal__entry__item" id="temp"></div>
+                <div class="journal__entry__item" id="content"></div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"></footer>
+
+</body>
+</html>
