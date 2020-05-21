@@ -43,7 +43,9 @@ const validateZip = (zip) => {
 }
 
 
-
+/**
+ * @description - adds more journal cards to DOM
+ */
 const loadMore = () => {
     let currentPost = postsToShow;
     postsToShow += 3;
@@ -86,6 +88,12 @@ const populateCard = (data, currentPost, maxPosts) => {
     return cards;
 };
 
+/**
+ * @description - helper function to craft skeleton of card
+ * @param {String} date - Date to display on the card 
+ * @param {String} temp - Temperature to display on the card
+ * @param {String} entry - Journal entry to display on the card
+ */
 const generateJournal = (date, temp, entry) => {
     return `
         <h3>Journal Entry:</h3>
@@ -124,6 +132,12 @@ const getWeatherData = async (url, apiKey, q) => {
     }
 }
 
+
+/**
+ * @description - asyncronous function to POST journal entry
+ * @param {string} url - url to fetch
+ * @param {Object} data - data to post
+ */
 const postData = async (url = '', data = {}) => {
     const response = await fetch(url, {
         method: 'POST',
@@ -143,6 +157,10 @@ const postData = async (url = '', data = {}) => {
     }
 }
 
+/**
+ * @description - asyncronous function to GET journal entry
+ * @param {string} url - url to fetch data from
+ */
 const getData = async (url = '') => {
     const response = await fetch(url);
 
@@ -154,6 +172,9 @@ const getData = async (url = '') => {
     }
 }
 
+/**
+ * @description - creates the first journal entry on page. Runs when clicking "Generate".
+ */
 const populateJournal = async () => {
     getData("/posts")
         .then(data => {
