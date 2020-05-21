@@ -1,6 +1,6 @@
-# Project Title
+# Weather Journal
 
-Weather Journal
+It's a journal. With weather stuff.
 
 ## Description
 
